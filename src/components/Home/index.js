@@ -88,7 +88,7 @@ class Home extends Component {
       eachVideo.title.toLowerCase().includes(searchInput.toLowerCase()),
     )
 
-    this.setState({videoList: filteredList})
+    this.setState({videoList: filteredList, searchInput: ''})
   }
 
   searchVideos = event => {
@@ -110,7 +110,7 @@ class Home extends Component {
     if (response.ok) {
       const fetchedData = await response.json()
       const {videos} = fetchedData
-      console.log(videos)
+      // console.log(videos)
       const updatedData = videos.map(eachItem => ({
         channel: {
           name: eachItem.channel.name,
@@ -123,7 +123,7 @@ class Home extends Component {
         viewCount: eachItem.view_count,
       }))
 
-      console.log(updatedData)
+      // console.log(updatedData)
 
       this.setState({
         apiStatus: apiStatusConstants.success,
@@ -136,7 +136,7 @@ class Home extends Component {
 
   render() {
     const {searchInput, videoList} = this.state
-    console.log(videoList)
+    // console.log(videoList)
     return (
       <ThemeContext.Consumer>
         {value => {

@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const HomeMainContainer = styled.div`
-  background-color: ${props => (props.darkMode ? '#000000' : '#ffffff')};
   min-height: 100vh;
 `
 
