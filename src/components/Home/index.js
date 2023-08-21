@@ -3,6 +3,7 @@ import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
 import {BsSearch} from 'react-icons/bs'
 import Header from '../Header'
+import SideBar from '../SideBar'
 import VideoItem from '../VideoItem'
 import BannerSection from '../BannerSection'
 import ThemeContext from '../../context/ThemeContext'
@@ -16,6 +17,7 @@ import {
   VideosSectionContainer,
   VideosList,
   NoSearchViewImage,
+  VideosContainer,
 } from './styledComponents'
 
 const apiStatusConstants = {
@@ -166,13 +168,17 @@ class Home extends Component {
           return (
             <HomeMainContainer darkMode={darkMode}>
               <Header />
-              <BannerSection />
-              <VideosSection>
-                {renderSearchFilter()}
-                {videoList.length === 0
-                  ? this.renderNoSearchResultsView()
-                  : this.renderApiViews()}
-              </VideosSection>
+              <VideosContainer>
+                <SideBar />
+                <VideosSection>
+                  <BannerSection />
+                  {renderSearchFilter()}
+
+                  {videoList.length === 0
+                    ? this.renderNoSearchResultsView()
+                    : this.renderApiViews()}
+                </VideosSection>
+              </VideosContainer>
             </HomeMainContainer>
           )
         }}

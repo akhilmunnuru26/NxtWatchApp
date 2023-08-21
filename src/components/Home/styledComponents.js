@@ -47,6 +47,9 @@ export const VideosList = styled.ul`
   justify-content: center;
   padding-left: 0px;
   align-self: center;
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
 `
 
 export const VideosSectionContainer = styled.div``
@@ -54,4 +57,10 @@ export const VideosSectionContainer = styled.div``
 export const NoSearchViewImage = styled.img`
   height: 200px;
   margin-top: 30px;
+`
+export const VideosContainer = styled.div`
+  @media screen and (min-width: 768px) {
+    display: flex;
+    padding: 20px;
+  }
 `

@@ -7,6 +7,7 @@ export const BannerSectionMainContainer = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   padding: 20px;
+  width: 100%;
 `
 
 export const BannerSectionContentContainer = styled.div`
